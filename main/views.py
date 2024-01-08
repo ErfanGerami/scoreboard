@@ -3,15 +3,14 @@ from django.views import View
 from .models import Score
 from django.http import JsonResponse
 from django.http import HttpResponse
-from rest_framework.permissions import AllowAny
-from django.views.decorators.csrf import csrf_exempt
+
 
 # Create your views here.
 
 max_output=10
 
 class Main(View):
-    permission_classes = (AllowAny,)
+
     def get(self,request):
         if("maze_name" not in request.GET):
             return HttpResponse("not a valid request")
