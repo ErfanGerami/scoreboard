@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import Main
+from .views import upload,scoreboard
 urlpatterns = [
 
-    path("",Main.as_view())
+    path("scoreboard",scoreboard),
+    path("upload",upload),
 ]
