@@ -27,12 +27,12 @@ class Main(View):
         return JsonResponse(output)
     def post(self,request):
         print(request.POST["time"])
-        if("username" not in request.POST or "time" not in request.POST or "map_name" not in request.POST):
+        if("username" not in request.POST or "time" not in request.POST or "maze_name" not in request.POST):
             return HttpResponse("not a valid request")
         
         username=request.POST["username"]
         time=request.POST["time"]
-        map_name=request.POST["map_name"]
+        map_name=request.POST["maze_name"]
 
 
         search_result=Score.objects.filter(username=username,maze_name=map_name)
